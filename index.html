@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vishnu Kannaujia · Software engineer</title>
+<meta name="description" content="Tech Lead at Expedia Group. Distributed systems, platform engineering and applied AI: agent evaluation, RAG and voice agents.">
+<meta property="og:title" content="Vishnu Kannaujia · Software engineer">
+<meta property="og:description" content="Distributed systems and platform engineering, plus open-source work on agent evaluation, RAG and voice agents.">
+<meta property="og:type" content="website">
+<style>
+  :root {
+    color-scheme: light dark;
+    --page: #f9f9f7; --surface: #fcfcfb; --ink: #0b0b0b; --ink2: #52514e; --muted: #898781;
+    --line: #e1e0d9; --accent: #2a78d6; --accent-ink: #1c5cab; --chip: #f0efec;
+    --good: #006300; --good-bg: #e6f3e6; --open: #52514e;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --page: #0d0d0d; --surface: #1a1a19; --ink: #ffffff; --ink2: #c3c2b7; --muted: #898781;
+      --line: #2c2c2a; --accent: #3987e5; --accent-ink: #86b6ef; --chip: #242422;
+      --good: #5fd35f; --good-bg: #12301a; --open: #c3c2b7;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0; background: var(--page); color: var(--ink);
+    font: 17px/1.6 system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent-ink); text-underline-offset: 3px; }
+  a:hover { text-decoration-thickness: 2px; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+  code, .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .9em; }
+
+  nav { display: flex; flex-wrap: wrap; gap: 8px 20px; justify-content: space-between; align-items: center; padding: 22px 0; font-size: 15px; }
+  nav .name { font-weight: 650; color: var(--ink); text-decoration: none; }
+  nav ul { display: flex; gap: 22px; list-style: none; margin: 0; padding: 0; }
+  nav ul a { color: var(--ink2); text-decoration: none; }
+  nav ul a:hover { color: var(--ink); }
+
+  header.hero { padding: 72px 0 64px; }
+  .eyebrow { font-size: 14px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); font-weight: 600; margin: 0 0 18px; }
+  h1 { font-size: clamp(34px, 6vw, 56px); line-height: 1.08; letter-spacing: -.02em; margin: 0 0 24px; font-weight: 680; max-width: 17ch; }
+  .lede { font-size: 20px; color: var(--ink2); max-width: 62ch; margin: 0 0 32px; }
+  .cta { display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn { display: inline-block; padding: 11px 18px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 15px; border: 1px solid var(--line); color: var(--ink); background: var(--surface); }
+  .btn.primary { background: var(--ink); color: var(--page); border-color: var(--ink); }
+  .btn:hover { border-color: var(--muted); }
+
+  .facts { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; margin: 0 0 88px; }
+  .facts div { background: var(--surface); padding: 20px 22px; }
+  .facts b { display: block; font-size: 28px; font-weight: 650; letter-spacing: -.01em; line-height: 1.2; }
+  .facts span { font-size: 14px; color: var(--ink2); }
+
+  section { padding: 0 0 88px; }
+  h2 { font-size: 14px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); font-weight: 600; margin: 0 0 28px; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+
+  .project { margin: 0 0 72px; }
+  .project:last-child { margin-bottom: 0; }
+  .project h3 { font-size: 30px; letter-spacing: -.015em; margin: 0 0 6px; line-height: 1.2; }
+  .project .kicker { color: var(--ink2); font-size: 19px; margin: 0 0 22px; max-width: 60ch; }
+  .project picture, .project img.shot { display: block; margin: 0 0 22px; }
+  .project img { width: 100%; height: auto; display: block; border-radius: 12px; }
+  .project img.shot { border: 1px solid var(--line); }
+  .project ul { margin: 0 0 18px; padding-left: 20px; max-width: 70ch; }
+  .project li { margin-bottom: 6px; }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; font-size: 14px; }
+  .chip { background: var(--chip); color: var(--ink2); padding: 3px 10px; border-radius: 999px; }
+  .meta a { margin-left: 6px; font-weight: 600; }
+
+  img, picture { max-width: 100%; }
+  table.prs { width: 100%; border-collapse: collapse; font-size: 16px; }
+  table.prs td { padding: 13px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+  table.prs td:first-child { width: 150px; color: var(--ink2); white-space: nowrap; padding-right: 16px; }
+  table.prs td:last-child { width: 84px; text-align: right; }
+  .state { font-size: 12.5px; font-weight: 650; padding: 3px 9px; border-radius: 999px; white-space: nowrap; }
+  .state.merged { background: var(--good-bg); color: var(--good); }
+  .state.open { border: 1px solid var(--line); color: var(--open); }
+
+  .role { display: grid; grid-template-columns: 170px 1fr; gap: 24px; padding: 0 0 28px; }
+  .role .when { color: var(--muted); font-size: 15px; padding-top: 3px; }
+  .role h3 { margin: 0 0 4px; font-size: 19px; }
+  .role p { margin: 0 0 8px; color: var(--ink2); }
+  .role ul { margin: 0; padding-left: 20px; }
+  .stack { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; font-size: 14px; }
+
+  footer { border-top: 1px solid var(--line); padding: 36px 0 56px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; font-size: 15px; color: var(--ink2); }
+  footer a { margin-right: 18px; }
+
+  @media (max-width: 720px) {
+    body { font-size: 16px; }
+    .wrap { padding: 0 16px; }
+    nav ul { gap: 14px; }
+    header.hero { padding: 40px 0 44px; }
+    .facts { grid-template-columns: 1fr 1fr; margin-bottom: 64px; }
+    .role { grid-template-columns: 1fr; gap: 2px; }
+    table.prs td:first-child { width: auto; white-space: normal; }
+    section { padding-bottom: 64px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<nav>
+  <a class="name" href="#top">Vishnu Kannaujia</a>
+  <ul>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#open-source">Open source</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<header class="hero" id="top">
+  <p class="eyebrow">Tech Lead · Expedia Group · Seattle</p>
+  <h1>I build platforms that stay up, and agents you can check.</h1>
+  <p class="lede">More than ten years of distributed systems and platform engineering, most of it at Expedia Group. Outside work I build and measure AI agents in the open: an evaluation study on 4,448 published agent runs, a retrieval tool with a full eval suite, and a local voice assistant.</p>
+  <div class="cta">
+    <a class="btn primary" href="#projects">See the work</a>
+    <a class="btn" href="https://github.com/vishnukannaujia">GitHub</a>
+    <a class="btn" href="https://www.linkedin.com/in/vishnukannaujia/">LinkedIn</a>
+  </div>
+</header>
+
+<div class="facts">
+  <div><b>10+ years</b><span>building distributed platforms</span></div>
+  <div><b>20+ countries</b><span>served by the insurance platform</span></div>
+  <div><b>$5M+</b><span>revenue from Roadside Assistance launch</span></div>
+  <div><b>60% fewer</b><span>on-call pages after alerting standards</span></div>
+</div>
+
+<section id="projects">
+  <h2>Projects</h2>
+
+  <article class="project">
+    <h3>Evalplane</h3>
+    <p class="kicker">How often do AI agents break their own rules? It depends on how you read the rule, by as much as 35×.</p>
+    <picture>
+      <source srcset="assets/evalplane-calibration-dark.svg" media="(prefers-color-scheme: dark)">
+      <img src="assets/evalplane-calibration-light.svg" alt="Bar chart: the share of solved τ²-bench runs that broke a confirmation rule under three readings. Retail 0.8%, 4.2%, 27.8%. Airline 0.2%, 3.7%, 13.9%.">
+    </picture>
+    <ul>
+      <li>Audited 4,448 published τ²-bench agent trajectories across airline, retail and telecom, offline and with zero model calls.</li>
+      <li>Found runs the benchmark scored as solved in which the agent still broke a stated policy, and showed the rate moves 35× in retail and 70× in airline depending on one modelling choice.</li>
+      <li>Reproduced an independent project's published numbers exactly, credited prior work up front, and recorded my own corrected figures in the write-up.</li>
+      <li>Ships as a CLI that turns each agent rule into a deterministic check and fails CI when one fires. 361 tests.</li>
+    </ul>
+    <div class="meta">
+      <span class="chip">Python</span><span class="chip">Agent evaluation</span><span class="chip">CI gating</span><span class="chip">OpenTelemetry</span>
+      <a href="https://github.com/vishnukannaujia/evalplane">Repository</a>
+      <a href="https://github.com/vishnukannaujia/evalplane/blob/main/docs/benchmark-tau2.md">Read the study</a>
+    </div>
+  </article>
+
+  <article class="project">
+    <h3>f1-fantasy</h3>
+    <p class="kicker">A retrieval and LangGraph tool that recommends a budget-legal F1 Fantasy team, with every design choice settled by a measured comparison.</p>
+    <img class="shot" src="assets/f1-chat-ui.png" alt="The f1-fantasy chat interface answering a price question and recommending a five-driver, two-constructor team at $99.6M of a $100M budget.">
+      <picture>
+        <source srcset="assets/f1-team-builder-graph-dark.svg" media="(prefers-color-scheme: dark)">
+        <img src="assets/f1-team-builder-graph-light.svg" alt="Diagram of the team-builder graph: load context, fetch live conditions, propose team, validate budget in Python, then finalize, with a retry loop on invalid proposals.">
+      </picture>
+      <picture>
+        <source srcset="assets/f1-embedding-bakeoff-dark.svg" media="(prefers-color-scheme: dark)">
+        <img src="assets/f1-embedding-bakeoff-light.svg" alt="Bar chart of recall at 1 for three embedding models: MiniLM 53%, MPNet 80%, BGE-large 93%.">
+      </picture>
+    <ul>
+      <li>The model proposes a team; plain Python enforces the $100M budget and sends exact errors back for up to two retries.</li>
+      <li>Ten eval scripts cover chunking, embeddings, reranking, generation quality, routing and prompt injection from live web results.</li>
+      <li>Tested nine chunking strategies and three embedding models; tested a reranker and rejected it when recall got worse.</li>
+      <li>Predictions are scored against real race results, and lessons feed back through an evidence-weighted ledger.</li>
+    </ul>
+    <div class="meta">
+      <span class="chip">Python</span><span class="chip">LangGraph</span><span class="chip">RAG</span><span class="chip">Chroma</span><span class="chip">Claude API</span>
+      <a href="https://github.com/vishnukannaujia/f1-fantasy">Repository</a>
+      <a href="https://github.com/vishnukannaujia/f1-fantasy/blob/main/EVALS.md">Eval results</a>
+    </div>
+  </article>
+
+  <article class="project">
+    <h3>Trazer</h3>
+    <p class="kicker">A voice assistant for your laptop that keeps listening while it works, because every task runs in a background subagent.</p>
+    <picture>
+      <source srcset="assets/trazer-architecture-dark.svg" media="(prefers-color-scheme: dark)">
+      <img src="assets/trazer-architecture-light.svg" alt="Architecture diagram: microphone, voice activity detection, speech to text, orchestrator, text to speech and speaker form a real-time loop; the orchestrator delegates to background subagents through a task registry.">
+    </picture>
+    <ul>
+      <li>Speech recognition, speech synthesis and voice detection all run on the machine; the language model is the only remote part and can be swapped for a local one.</li>
+      <li>You can interrupt it mid-sentence: detected speech cuts playback immediately.</li>
+      <li>Nine switchable voices across six languages, changed by voice command.</li>
+      <li>Shell and file actions are permission-classified and need spoken confirmation; every model call is traced locally.</li>
+    </ul>
+    <div class="meta">
+      <span class="chip">Python</span><span class="chip">asyncio</span><span class="chip">faster-whisper</span><span class="chip">Piper</span><span class="chip">Silero VAD</span>
+      <a href="https://github.com/vishnukannaujia/Trazer">Repository</a>
+    </div>
+  </article>
+</section>
+
+<section id="open-source">
+  <h2>Open-source contributions</h2>
+  <table class="prs">
+    <tr><td>Project-MONAI/MONAI</td><td><a href="https://github.com/Project-MONAI/MONAI/pull/8918">Use a compact [1, −2, 1] kernel for BendingEnergyLoss second derivatives</a></td><td><span class="state merged">Merged</span></td></tr>
+    <tr><td>Project-MONAI/MONAI</td><td><a href="https://github.com/Project-MONAI/MONAI/pull/8919">Force garbage collection in WSIReader tests to stop unclosed-file warnings</a></td><td><span class="state merged">Merged</span></td></tr>
+    <tr><td>Project-MONAI/MONAI</td><td><a href="https://github.com/Project-MONAI/MONAI/pull/9002">Run nnUNetV2Runner parallel training commands without <code>shell=True</code></a></td><td><span class="state open">Open</span></td></tr>
+    <tr><td>Project-MONAI/MONAI</td><td><a href="https://github.com/Project-MONAI/MONAI/pull/9044">Warn when lazy resampling upcasts non-float input to float32</a></td><td><span class="state open">Open</span></td></tr>
+    <tr><td>NVIDIA/garak</td><td><a href="https://github.com/NVIDIA/garak/pull/2036">Spreadsheet formula injection probe and detector</a></td><td><span class="state open">Open</span></td></tr>
+    <tr><td>NVIDIA/garak</td><td><a href="https://github.com/NVIDIA/garak/pull/2037">Log injection and log forging probe and detector</a></td><td><span class="state open">Open</span></td></tr>
+    <tr><td>NVIDIA/garak</td><td><a href="https://github.com/NVIDIA/garak/pull/2038">SVG and XML injection probe and detector</a></td><td><span class="state open">Open</span></td></tr>
+    <tr><td>cleanlab/cleanlab</td><td><a href="https://github.com/cleanlab/cleanlab/pull/1323">Turn the near-duplicate score test into a property-based test</a></td><td><span class="state open">Open</span></td></tr>
+  </table>
+</section>
+
+<section id="experience">
+  <h2>Experience</h2>
+  <div class="role">
+    <div class="when">2018 – present<br>Seattle, WA</div>
+    <div>
+      <h3>Expedia Group · Tech Lead, Software Development Engineer 3</h3>
+      <p>Insurance and value-added services platform, across multiple brands and 20+ countries.</p>
+      <ul>
+        <li>Launched Roadside Assistance, a $5M+ revenue product, on a reusable framework that cut per-product engineering effort by about 70%.</li>
+        <li>Led consolidation of the Vrbo and Expedia insurance supply platforms, taking new-product launches from quarters to months.</li>
+        <li>Shipped AI developer tooling to production: Claude Code skills and plugins, MCP servers, and retrieval workflows for incident resolution.</li>
+        <li>Cut on-call pages by 60% through alerting standards and automation.</li>
+      </ul>
+      <div class="stack">
+        <span class="chip">Kotlin</span><span class="chip">Java</span><span class="chip">AWS</span><span class="chip">Kafka</span><span class="chip">Terraform</span><span class="chip">MongoDB</span><span class="chip">DynamoDB</span><span class="chip">Redis</span>
+      </div>
+    </div>
+  </div>
+  <div class="role">
+    <div class="when">Earlier</div>
+    <div>
+      <h3>Samsung</h3>
+      <p>Software engineer. Details on <a href="https://www.linkedin.com/in/vishnukannaujia/">LinkedIn</a>.</p>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div>
+    <a href="mailto:vishnu.kannaujia@gmail.com">vishnu.kannaujia@gmail.com</a>
+    <a href="https://github.com/vishnukannaujia">GitHub</a>
+    <a href="https://www.linkedin.com/in/vishnukannaujia/">LinkedIn</a>
+  </div>
+  <div>Seattle, WA</div>
+</footer>
+
+</div>
+</body>
+</html>
